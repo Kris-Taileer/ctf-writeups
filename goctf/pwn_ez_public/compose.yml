@@ -1,0 +1,13 @@
+services:
+  ez:
+    build: .
+    container_name: ez_container
+    ports:
+      - "6700:6700"
+    restart: always
+    pids_limit: 512
+    read_only: true
+    mem_limit: 256M
+    cpus: 0.5
+    security_opt:
+      - seccomp:unconfined
